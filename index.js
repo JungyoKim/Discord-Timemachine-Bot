@@ -30,20 +30,23 @@ client.on('message', (message) => {
     else if(message.content === '방학') {
         message.reply('방학 시작')
         var semester = "8"
+        var semester7 = "8"
     }
 
     else if(message.content === '개학') {
         message.reply('개학')
         var semester = "1,2,3,4,5"
+        var semester7 = "2,3,5"
     }
 
 });
 
 var semester = "1,2,3,4,5"
+var semester7 = "2,3,5"
 
 const class1 = (s) => {
     var rule = new schedule.RecurrenceRule();
-    rule.dayOfWeek = [1,2,3,4,5];
+    rule.dayOfWeek = [semester];
     rule.hour = 9;
     rule.minute = 0;
 
@@ -58,7 +61,7 @@ class1();
 
 const class2 = (s) => {
     var rule2 = new schedule.RecurrenceRule();
-    rule2.dayOfWeek = [1,2,3,4,5];
+    rule2.dayOfWeek = [semester];
     rule2.hour = 9;
     rule2.minute = 50;
 
@@ -73,7 +76,7 @@ class2();
 
 const class3 = (s) => {
     var rule3 = new schedule.RecurrenceRule();
-    rule3.dayOfWeek = [1,2,3,4,5];
+    rule3.dayOfWeek = [semester];
     rule3.hour = 10;
     rule3.minute = 40;
 
@@ -88,7 +91,7 @@ class3();
 
 const class4 = (s) => {
     var rule4 = new schedule.RecurrenceRule();
-    rule4.dayOfWeek = [1,2,3,4,5];
+    rule4.dayOfWeek = [semester];
     rule4.hour = 11;
     rule4.minute = 30;
 
@@ -103,7 +106,7 @@ class4();
 
 const lunch = (s) => {
     var rule5 = new schedule.RecurrenceRule();
-    rule5.dayOfWeek = [1,2,3,4,5];
+    rule5.dayOfWeek = [semester];
     rule5.hour = 12;
     rule5.minute = 10;
 
@@ -118,7 +121,7 @@ lunch();
 
 const class5 = (s) => {
     var rule6 = new schedule.RecurrenceRule();
-    rule6.dayOfWeek = [1,2,3,4,5];
+    rule6.dayOfWeek = [semester];
     rule6.hour = 13;
     rule6.minute = 10;
 
@@ -133,7 +136,7 @@ class5();
 
 const class6 = (s) => {
     var rule7 = new schedule.RecurrenceRule();
-    rule7.dayOfWeek = [1,2,3,4,5];
+    rule7.dayOfWeek = [semester];
     rule7.hour = 14;
     rule7.minute = 0;
 
@@ -148,7 +151,7 @@ class6();
 
 const class7 = (s) => {
     var rule8 = new schedule.RecurrenceRule();
-    rule8.dayOfWeek = [2,3,5];
+    rule8.dayOfWeek = [semester7];
     rule8.hour = 14;
     rule8.minute = 50;
 
@@ -163,7 +166,7 @@ class7();
 
 const classf = (s) => {
     var rule9 = new schedule.RecurrenceRule();
-    rule9.dayOfWeek = [2,3,5];
+    rule9.dayOfWeek = [semester7];
     rule9.hour = 15;
     rule9.minute = 30;
 
