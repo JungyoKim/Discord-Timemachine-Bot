@@ -39,6 +39,11 @@ client.on('message', (message) => {
         var semester7 = "2,3,5"
     }
 
+    else if(message.content === 'semester 값') {
+        message.reply(semester)
+        message.reply(semester7)
+    }
+
 });
 
 var semester = "1,2,3,4,5"
