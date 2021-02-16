@@ -11,20 +11,35 @@ client.on('ready', () => {
     console.log('타임머신이 로그인 했습니다');
     client.user.setActivity('시간표', { type: 'WATCHING' })
     const channel = client.channels.cache.get('794034341646565406');
-    channel.send('STARTED');
+    // channel.send('STARTED');
 });
 
 client.on('message', (message) => {
     var date = moment().format('HH:mm:ss');
+    
     if(message.content === '시간표') {
         message.reply('https://cdn.discordapp.com/attachments/764389401635586058/796185535512444989/image0.jpg')
         message.reply('시간표를 열었습니다')
         message.reply(date)
     }
+    
     else if(message.content === '봇 추가') {
         message.reply('https://discord.com/api/oauth2/authorize?client_id=796166120528281670&permissions=8&scope=bot')
     }
+
+    else if(message.content === '방학') {
+        message.reply('방학 시작')
+        var semester = "8"
+    }
+
+    else if(message.content === '개학') {
+        message.reply('개학')
+        var semester = "1,2,3,4,5"
+    }
+
 });
+
+var semester = "1,2,3,4,5"
 
 const class1 = (s) => {
     var rule = new schedule.RecurrenceRule();
