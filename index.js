@@ -9,6 +9,8 @@ const token = 'Nzk2MTY2MTIwNTI4MjgxNjcw.X_T9ew.1qDpS8dKMU_fB0hYd2a4vGHGUh8';
 
 client.on('ready', () => {
     console.log('타임머신이 로그인 했습니다');
+    console.log(semester);
+    console.log(semester7);
     client.user.setActivity('시간표', { type: 'WATCHING' })
     const channel = client.channels.cache.get('794034341646565406');
     // channel.send('STARTED');
@@ -27,31 +29,31 @@ client.on('message', (message) => {
         message.reply('https://discord.com/api/oauth2/authorize?client_id=796166120528281670&permissions=8&scope=bot')
     }
 
-    else if(message.content === '방학') {
-        message.reply('방학 시작')
-        var semester = "8"
-        var semester7 = "8"
-    }
+    // else if(message.content === '방학') {
+    //     message.reply('방학 시작')
+    //     var semester = "8"
+    //     var semester7 = "8"
+    // }
 
-    else if(message.content === '개학') {
-        message.reply('개학')
-        var semester = "1,2,3,4,5"
-        var semester7 = "2,3,5"
-    }
+    // else if(message.content === '개학') {
+    //     message.reply('개학')
+    //     var semester = "1,2,3,4,5"
+    //     var semester7 = "2,3,5"
+    // }
 
-    else if(message.content === 'semester 값') {
-        message.reply(semester)
-        message.reply(semester7)
-    }
+    // else if(message.content === 'semester 값') {
+    //     message.reply(semester)
+    //     message.reply(semester7)
+    // }
 
 });
 
-var semester = "1,2,3,4,5"
-var semester7 = "2,3,5"
+// var semester = "1,2,3,4,5"
+// var semester7 = "2,3,5"
 
 const class1 = (s) => {
     var rule = new schedule.RecurrenceRule();
-    rule.dayOfWeek = [semester];
+    rule.dayOfWeek = [1,2,3,4,5];
     rule.hour = 9;
     rule.minute = 0;
 
@@ -66,7 +68,7 @@ class1();
 
 const class2 = (s) => {
     var rule2 = new schedule.RecurrenceRule();
-    rule2.dayOfWeek = [semester];
+    rule2.dayOfWeek = [1,2,3,4,5];
     rule2.hour = 9;
     rule2.minute = 50;
 
@@ -81,7 +83,7 @@ class2();
 
 const class3 = (s) => {
     var rule3 = new schedule.RecurrenceRule();
-    rule3.dayOfWeek = [semester];
+    rule3.dayOfWeek = [1,2,3,4,5];
     rule3.hour = 10;
     rule3.minute = 40;
 
@@ -96,7 +98,7 @@ class3();
 
 const class4 = (s) => {
     var rule4 = new schedule.RecurrenceRule();
-    rule4.dayOfWeek = [semester];
+    rule4.dayOfWeek = [1,2,3,4,5];
     rule4.hour = 11;
     rule4.minute = 30;
 
@@ -111,7 +113,7 @@ class4();
 
 const lunch = (s) => {
     var rule5 = new schedule.RecurrenceRule();
-    rule5.dayOfWeek = [semester];
+    rule5.dayOfWeek = [1,2,3,4,5];
     rule5.hour = 12;
     rule5.minute = 10;
 
@@ -126,7 +128,7 @@ lunch();
 
 const class5 = (s) => {
     var rule6 = new schedule.RecurrenceRule();
-    rule6.dayOfWeek = [semester];
+    rule6.dayOfWeek = [1,2,3,4,5];
     rule6.hour = 13;
     rule6.minute = 10;
 
@@ -141,7 +143,7 @@ class5();
 
 const class6 = (s) => {
     var rule7 = new schedule.RecurrenceRule();
-    rule7.dayOfWeek = [semester];
+    rule7.dayOfWeek = [1,2,3,4,5];
     rule7.hour = 14;
     rule7.minute = 0;
 
@@ -152,11 +154,26 @@ const class6 = (s) => {
     });
 };
 
+const classf6 = (s) => {
+    var rule9 = new schedule.RecurrenceRule();
+    rule9.dayOfWeek = [1,2,3,4,5];
+    rule9.hour = 14;
+    rule9.minute = 40;
+
+    var j =schedule.scheduleJob(rule9,function() {
+        const channel = client.channels.cache.get('794034341646565406');
+        channel.send('학교 끝');
+        console.log('log');
+    });
+};
+
+classf6();
+
 class6();
 
 const class7 = (s) => {
     var rule8 = new schedule.RecurrenceRule();
-    rule8.dayOfWeek = [semester7];
+    rule8.dayOfWeek = [2,3,5];
     rule8.hour = 14;
     rule8.minute = 50;
 
@@ -169,9 +186,9 @@ const class7 = (s) => {
 
 class7();
 
-const classf = (s) => {
+const classf7 = (s) => {
     var rule9 = new schedule.RecurrenceRule();
-    rule9.dayOfWeek = [semester7];
+    rule9.dayOfWeek = [2,3,5];
     rule9.hour = 15;
     rule9.minute = 30;
 
@@ -182,6 +199,6 @@ const classf = (s) => {
     });
 };
 
-classf();
+classf7();
 
 client.login(token);
