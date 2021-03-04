@@ -20,7 +20,7 @@ client.on('message', (message) => {
     var date = moment().format('HH:mm:ss');
     
     if(message.content === '시간표') {
-        message.reply('https://cdn.discordapp.com/attachments/764389401635586058/796185535512444989/image0.jpg')
+        message.reply('https://media.discordapp.net/attachments/721642021944819844/816481651973423134/image0.jpg?width=506&height=675')
         message.reply('시간표를 열었습니다')
         message.reply(date)
     }
